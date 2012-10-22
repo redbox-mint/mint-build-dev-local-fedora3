@@ -9,15 +9,15 @@
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
-    <version>1.5.2</version>
+    <version>1.5.2.1</version>
   </parent>
   <properties>
     <!-- Used in build -->
-    <mint.version>1.5.2</mint.version>
+    <mint.version>1.5.2.1</mint.version>
     <package.finalname>${project.build.finalName}</package.finalname>
-    <!-- Runtime values, will replace placeholders
-             in config and control scripts -->
-    <app.location>${project.home}</app.location>
+    <!-- Runtime values, will replace placeholders in config and control scripts -->
+    <app.location.windows>${project.home}</app.location.windows>
+    <app.location.linux>${project.home}</app.location.linux>
     <server.port>9001</server.port>
     <amq.port>9201</amq.port>
     <amq.stomp.port>9202</amq.stomp.port>
@@ -95,6 +95,8 @@
     <profile>
       <id>build-package</id>
       <properties>
+        <app.location.windows>c:/tf2/mint</app.location.windows>
+    	<app.location.linux>/opt/mint</app.location.linux>
         <server.url.base>http://localhost:${server.port}/mint/</server.url.base>
       </properties>
       <!-- Used for creating an install - omits local build system settings -->
