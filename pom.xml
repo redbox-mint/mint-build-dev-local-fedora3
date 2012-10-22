@@ -14,8 +14,10 @@
   <properties>
     <!-- Used in build -->
     <mint.version>1.5.2</mint.version>
+    <package.finalname>${project.build.finalName}</package.finalname>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
+    <app.location>${project.home}</app.location>
     <server.port>9001</server.port>
     <amq.port>9201</amq.port>
     <amq.stomp.port>9202</amq.stomp.port>
@@ -77,6 +79,20 @@
   </dependencies>
   <profiles>
     <profile>
+    	<id>linux</id>
+    	<properties>
+    		<app.location>/opt/mint</app.location>
+    		<package.finalname>${project.build.finalName}-linux</package.finalname>
+    	</properties>
+    </profile>
+    <profile>
+    	<id>windows</id>
+    	<properties>
+    		<app.location>C:/tf2/mint</app.location>
+    		<package.finalname>${project.build.finalName}-windows</package.finalname>
+    	</properties>
+    </profile>
+    <profile>
       <id>build-package</id>
       <properties>
         <server.url.base>http://localhost:${server.port}/mint/</server.url.base>
@@ -95,6 +111,7 @@
                   <goal>single</goal>
                 </goals>
                 <configuration>
+                  <finalName>${package.finalname}</finalName>
                   <descriptors>
                     <descriptor>package.xml</descriptor>
                   </descriptors>
