@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.redbox-mint</groupId>
   <artifactId>mint-local-curation-fedora3-demo</artifactId>
-  <version>1.5.2-SNAPSHOT</version>
+  <version>1.5.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>The Mint - Local Curation Fedora3 Demo</name>
   <parent>
@@ -323,6 +323,7 @@
   <scm>
     <url>https://github.com/redbox-mint/mint-build-dev-local-fedora3.git</url>
     <developerConnection>scm:git:https://github.com/redbox-mint/mint-build-dev-local-fedora3.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
 		<snapshotRepository>
